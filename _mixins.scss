@@ -1,0 +1,11 @@
+@mixin overal{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comic Sans MS", Calibri, serif;
+}
+@mixin textStyle($size,$weight,$color){
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}

@@ -1,0 +1,45 @@
+@import "variables";
+@import "mixins";
+
+*{
+  @include overal;
+}
+body{
+  background: $bgColor;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 3rem;
+  background: $primaryColor;
+  h1{
+    @include textStyle(1.3rem,bold,$secondaryColor);
+  }
+}
+.navbar{
+  display: flex;
+  align-items: center;
+
+  img{
+    width: 40px;
+    border-radius: 50px;
+  }
+  nav{
+    margin-right: 40px;
+
+  }
+  ul{
+    display: flex;
+    list-style: none;
+  }
+  a{
+    text-decoration: none;
+    padding: 8px;
+    transition: all .15s ease-in;
+    @include textStyle(1rem,bold,$secondaryColor);
+    &:hover{
+      color: $textColor;
+    }
+  }
+}
