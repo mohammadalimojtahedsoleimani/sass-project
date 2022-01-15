@@ -13,33 +13,87 @@ body{
   align-items: center;
   padding: 0.8rem 3rem;
   background: $primaryColor;
-  h1{
-    @include textStyle(1.3rem,bold,$secondaryColor);
-  }
-}
-.navbar{
-  display: flex;
-  align-items: center;
-
   img{
     width: 40px;
     border-radius: 50px;
   }
-  nav{
-    margin-right: 40px;
-
+  .hamburger-menu{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 150;
+    span{
+      //ertefa bedim va kenar ham ghara migiran chon inline block ha nemyran khat badi
+      display: inline-block;
+      height:3px ;
+      width:20px;
+      margin: 2px;
+      border-radius: 3px;
+      background:$secondaryColor ;
+      cursor: pointer;
+    }
   }
-  ul{
+
+}
+.navbar{
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.navbar__item{
     display: flex;
     list-style: none;
-  }
+  margin-right: 50px;
   a{
     text-decoration: none;
     padding: 8px;
-    transition: all .15s ease-in;
+    transition: all .3s ease-in;
     @include textStyle(1rem,bold,$secondaryColor);
-    &:hover{
+    &:hover {
       color: $textColor;
     }
   }
+}
+
+
+@include media(M){
+  .header{
+
+    .hamburger-menu{
+      //aval header bad hamburger bekhater masel erth bari
+      display: flex;
+    }
+
+  }
+  .navbar__item{
+    opacity: 0;
+    right: -1000px;
+
+  }
+
+  .active {
+    margin: 0;
+    transition: all .3s linear;
+    flex-direction: column;
+    transform: translateX(0);
+    background-color: #1565df;
+    position: fixed;
+    top: 0;
+    right: 0;
+    opacity: 1;
+    height: 100vh;
+    width: 300px;
+    padding-top: 3.5rem;
+    li{
+      padding: 1.5rem;
+    }
+
+    a {
+      color: $secondaryColor;
+    }
+
+  }
+
 }
