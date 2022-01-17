@@ -1,73 +1,123 @@
 @import "variables";
 @import "mixins";
 
-*{
+* {
   @include overal;
 }
-body{
+
+body {
   background: $bgColor;
 }
-.header{
+
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.8rem 3rem;
   background: $primaryColor;
-  img{
+
+  img {
     width: 40px;
     border-radius: 50px;
   }
-  .hamburger-menu{
+
+  .hamburger-menu {
     display: none;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     z-index: 150;
-    span{
+
+    span {
       //ertefa bedim va kenar ham ghara migiran chon inline block ha nemyran khat badi
       display: inline-block;
-      height:3px ;
-      width:20px;
+      height: 3px;
+      width: 20px;
       margin: 2px;
       border-radius: 3px;
-      background:$secondaryColor ;
+      background: $secondaryColor;
       cursor: pointer;
     }
   }
 
 }
-.navbar{
+
+.navbar {
   display: flex;
   align-items: center;
   z-index: 10;
 }
 
-.navbar__item{
-    display: flex;
-    list-style: none;
+.navbar__item {
+  display: flex;
+  list-style: none;
   margin-right: 50px;
-  a{
+
+  a {
     text-decoration: none;
     padding: 8px;
     transition: all .3s ease-in;
-    @include textStyle(1rem,bold,$secondaryColor);
+    @include textStyle(1rem, bold, $secondaryColor);
+
     &:hover {
       color: $textColor;
     }
   }
 }
 
+.main {
+  display: flex;
+  margin: 2rem 3rem;
 
-@include media(M){
-  .header{
+  aside {
+    flex-direction: column;
+    width: 25%;
+    margin-right: 25px;
+    @include boxStyle;
 
-    .hamburger-menu{
+    @include bodyStyle;
+    div{
+      background: $primaryColor;
+      width: 100%;
+      height: 110px;
+      margin: 20px 10px;
+      line-height: 110px;
+      text-align: center;
+      @include boxStyle;
+      @include textStyle(1rem,bold,$secondaryColor);
+    }
+
+  }
+
+  main {
+      width: 75%;
+    @include bodyStyle;
+    @include boxStyle;
+    flex-direction: column;
+    img{
+      width: 200px;
+      @include boxStyle;
+    }
+    h2{
+      @include textStyle(4rem,bold,$primaryColor);
+      margin: 2rem 0 3rem;
+    }
+    p{
+      @include textStyle(2rem,bold,$textColor);
+    }
+  }
+}
+
+@include media(M) {
+  .header {
+
+    .hamburger-menu {
       //aval header bad hamburger bekhater masel erth bari
       display: flex;
     }
 
   }
-  .navbar__item{
+  .navbar__item {
     opacity: 0;
     right: -1000px;
 
@@ -86,13 +136,32 @@ body{
     height: 100vh;
     width: 300px;
     padding-top: 3.5rem;
-    li{
+
+    li {
       padding: 1.5rem;
     }
 
     a {
       color: $secondaryColor;
     }
+
+  }
+  .main{
+    flex-direction: column-reverse;
+    margin: 1rem;
+    main{
+      width: calc(100% - 2rem);
+      height: 500px;
+      margin-bottom: 20px;
+      p{
+        font-size: 1.3rem;
+      }
+
+    }
+  }
+  aside{
+    width: calc(100% - 2rem);
+    height: 600px;
 
   }
 
