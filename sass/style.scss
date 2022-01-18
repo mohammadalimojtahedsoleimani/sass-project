@@ -151,6 +151,42 @@ body {
   }
 }
 
+footer {
+  display: flex;
+  padding: 2rem 3rem;
+  background: $primaryColor;
+  margin-top: 30px;
+
+  .summary {
+    width: 50%;
+
+    p {
+      text-align: justify;
+      @include textStyle(1.2rem, 100, $secondaryColor)
+    }
+  }
+
+  .links {
+    padding: 0 5rem;
+
+    ul {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      @include textStyle(1.2rem, bold, $secondaryColor);
+      &:hover{
+        @include hover;
+      }
+      margin-bottom: 10px;
+      display: inline-block;
+      transition: all .15s ease-in;
+    }
+  }
+
+}
+
 @include media(M) {
   .header {
 
@@ -209,14 +245,15 @@ body {
     height: 600px;
 
   }
-  .cards{
-    grid-template-columns: repeat(1,1fr);
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
 
   }
 }
-@include media(L){
-  .cards{
-    grid-template-columns: repeat(2,1fr);
+
+@include media(L) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
     gap: 50px;
   }
 }

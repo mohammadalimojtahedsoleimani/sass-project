@@ -160,6 +160,40 @@ body {
   color: #654fef;
 }
 
+footer {
+  display: flex;
+  padding: 2rem 3rem;
+  background: #654fef;
+  margin-top: 30px;
+}
+footer .summary {
+  width: 50%;
+}
+footer .summary p {
+  text-align: justify;
+  font-size: 1.2rem;
+  font-weight: 100;
+  color: #fff;
+}
+footer .links {
+  padding: 0 5rem;
+}
+footer .links ul {
+  list-style: none;
+}
+footer .links a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+  display: inline-block;
+  transition: all 0.15s ease-in;
+}
+footer .links a:hover {
+  color: black;
+}
+
 @media (max-width: 768px) {
   .header .hamburger-menu {
     display: flex;
