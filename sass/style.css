@@ -246,6 +246,18 @@ footer .links a:hover {
   .cards {
     grid-template-columns: repeat(1, 1fr);
   }
+
+  footer {
+    flex-direction: column;
+  }
+  footer .summary {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  footer .links {
+    width: 100%;
+    padding: 0;
+  }
 }
 @media (min-width: 768px) and (max-width: 1200px) {
   .cards {
