@@ -76,7 +76,8 @@ body {
     @include boxStyle;
 
     @include bodyStyle;
-    div{
+
+    div {
       background: $primaryColor;
       width: 100%;
       height: 110px;
@@ -84,27 +85,69 @@ body {
       line-height: 110px;
       text-align: center;
       @include boxStyle;
-      @include textStyle(1rem,bold,$secondaryColor);
+      @include textStyle(1rem, bold, $secondaryColor);
     }
 
   }
 
   main {
-      width: 75%;
+    width: 75%;
     @include bodyStyle;
     @include boxStyle;
     flex-direction: column;
-    img{
+
+    img {
       width: 200px;
       @include boxStyle;
     }
-    h2{
-      @include textStyle(4rem,bold,$primaryColor);
+
+    h2 {
+      @include textStyle(4rem, bold, $primaryColor);
       margin: 2rem 0 3rem;
     }
-    p{
-      @include textStyle(2rem,bold,$textColor);
+
+    p {
+      @include textStyle(2rem, bold, $textColor);
     }
+  }
+}
+
+
+.cards {
+  width: calc(100% - 6rem);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 30px;
+  padding: 5px;
+
+}
+
+.card {
+  @include boxStyle;
+
+  img {
+    width: 100%;
+  }
+
+  .card-content {
+    line-height: 1.5rem;
+    padding: 15px;
+    background: $secondaryColor;
+
+  }
+
+  p {
+    margin: 10px 0;
+    @include textStyle(1.1rem, 100, $textColor);
+  }
+
+  span {
+    display: inline-block;
+    //bekhater inke margin va .. bedahim
+    margin: 10px 0;
+    @include textStyle(0.9rem, bold, $primaryColor);
   }
 }
 
@@ -146,23 +189,29 @@ body {
     }
 
   }
-  .main{
+  .main {
     flex-direction: column-reverse;
     margin: 1rem;
-    main{
+
+    main {
       width: calc(100% - 2rem);
       height: 500px;
       margin-bottom: 20px;
-      p{
+
+      p {
         font-size: 1.3rem;
       }
 
     }
   }
-  aside{
+  aside {
     width: calc(100% - 2rem);
     height: 600px;
 
   }
+  .cards{
+    grid-template-columns: repeat(1,1fr);
 
+  }
 }
+
