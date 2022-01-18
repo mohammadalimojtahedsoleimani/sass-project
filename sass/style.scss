@@ -214,4 +214,10 @@ body {
 
   }
 }
+@include media(L){
+  .cards{
+    grid-template-columns: repeat(2,1fr);
+    gap: 50px;
+  }
+}
 
